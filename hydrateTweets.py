@@ -4,8 +4,6 @@ Created on Fri Oct 16 10:16:39 2020
 
 @author: Nils
 
-TODO: 
-    - add respective senitment scores from all_files to usa_tweets using the idx variable
 """
 
 #%% Init libraries
@@ -73,3 +71,14 @@ for tweet in t.hydrate(open(r'D:\NLP_Project_2020\all_tweets.csv')):
 
 df = pd.DataFrame(data)
 df.to_csv(r'D:\NLP_Project_2020\usa_tweets.csv', index = False)
+
+#%%  add sentiment values 
+
+df1 = pd.read_csv(r'D:\NLP_Project_2020\usa_tweets.csv')
+df2 = pd.read_csv(r'D:\NLP_Project_2020\all_tweets.csv')    
+sent = [df2['1'][val] for val in df1['idx']]
+sent = pd.DataFrame({"Sentiment": sent})
+df1 = df1.drop(['idx'], axis=1)
+df1.rename(columns={"date": "Date"})
+result = pd.concat([df1, sent], axis=1, sort=False)
+result.to_csv(r'D:\NLP_Project_2020\usa_tweets_with_sent_scores.csv', index = False)
