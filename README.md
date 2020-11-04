@@ -7,7 +7,7 @@ and FastText. Each classifier (where applicable) used an n-gram length of 1, mad
 stemming. It has been observed that none of the classifiers performs significantly better than another one with exception of the VADER model, which exerted
 lower performance in terms of accuracy and F1 score. In addition to comparing the performance of these various classifiers, the sentiment of corona related tweets originating from the U.S is visualized over time.
 
-You can use !pip install requirements.txt to install the necessary environment requirements. 
+You can use !pip install env_requirements.txt to install the necessary environment requirements. 
 In addittion, the file hydrateTweets.py obtains tweets filtered for the location of the U.S.. You can adjust this file to filter tweets for a different location.
 
 
