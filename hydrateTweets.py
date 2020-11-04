@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 """
-Created on Fri Oct 16 10:16:39 2020
+Hydrates tweets from the geotagged corona virus tweet data set and filteres the tweets for the location "USA" 
+The initial data set for tweeets of the usa can be found here: https://ieee-dataport.org/open-access/coronavirus-covid-19-geo-tagged-tweets-dataset
 
-@author: Nils
-
+Warning: This code is handed in just for reference, it's quite messy.
 """
 
 #%% Init libraries
@@ -12,7 +12,7 @@ import re
 import glob
 
 
-#%% merge akk csv files into one for hydrating
+#%% merge all csv files into one for hydrating
 '''
 path = r'D:\NLP_Project_2020\big_dataset' # use your path
 all_files = glob.glob(path + "/*.csv")
@@ -26,10 +26,11 @@ sample_tweets.to_csv(r'D:\NLP_Project_2020\sample_big_data_tweets.csv', index = 
 #%% Init twarc to hydrate tweets
 from twarc import Twarc
 
-consumer_key='jMSOeT4akbgDCH6ZF6XC1hwIO'
-consumer_secret='OYoFQdqbQH3OK2o7IfFVOioXoeJrQuUzDdROBmv0y8Ul5pZvwX'
-access_token_key='296259116-iZh92oTkQvGL6V93JZ0irquEFkwOb5j9mjg5ILEc'
-access_token_secret='mDVC1ED99WOqQHNkgQojx2P5ECedgWzGtr5EDcKbPBqC7'
+# Fill in your keys here
+consumer_key='consumer_key'
+consumer_secret='consumer_secret'
+access_token_key='access_token_key'
+access_token_secret='access_token_secret'
 
 t = Twarc(consumer_key, consumer_secret, access_token_key, access_token_secret)
 
