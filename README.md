@@ -10,5 +10,7 @@ lower performance in terms of accuracy and F1 score. In addition to comparing th
 You can use !pip install env_requirements.txt to install the necessary environment requirements. 
 In addittion, the file hydrateTweets.py obtains tweets filtered for the location of the U.S.. You can adjust this file to filter tweets for a different location.
 
+This project has been done together with Jeroen Ritmeester.
+
 
 
